@@ -4,6 +4,7 @@ try {
   const meshFile = process.argv[2];
   const maxNumberOfViewPoints = parseInt(process.argv[3]);
   const mesh = require(path.join(__dirname, meshFile));
+
   if (isNaN(maxNumberOfViewPoints) || maxNumberOfViewPoints <= 0) {
     throw new Error("Invalid number of view points");
   }

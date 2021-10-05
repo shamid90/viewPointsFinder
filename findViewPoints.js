@@ -8,9 +8,10 @@ const findViewPoints = (mesh, maxNumberOfViewPoints) => {
   const sortedElmentsByValue = sortArrayOfObjects([...mesh.values]);
   for (element of sortedElmentsByValue) {
     if (!notViewPoints.some((e) => e === element.element_id)) {
-      const elWithNodes = mesh.elements.find(
-        (e) => e.id === element.element_id
-      );
+      // const elWithNodes = mesh.elements.find(
+      //   (e) => e.id === element.element_id
+      // );
+      const elWithNodes = mesh.elements[element.element_id];
       const checkedElement = isElementViewPoint(
         mesh,
         elWithNodes,
